@@ -1,0 +1,80 @@
+.about__cards {
+    /* The CSS Grid Layout Module offers a grid-based layout system, 
+    with rows and columns, making it easier to design web pages without 
+    having to use floats and positioning. */
+
+    /* The grid-template-columns CSS property defines the line names and track sizing functions of the grid columns. */
+
+    /* The repeat() CSS function represents a repeated fragment of the track list, allowing 
+    a large number of columns or rows that exhibit a recurring pattern to be written in a more compact form. */
+
+    /* CSS Grid Layout introduces a new unit of length called fr, which is short for “fraction”. 
+    MDN defines the fr unit as a unit which represents a fraction of the available space in the grid container. */
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 1.5rem;
+}
+
+.about__card {
+    background: var(--color-bg-variant);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.about__card:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+}
+
+.about__icon {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.about__card h5 {
+    font-size: 0.95rem;
+}
+
+.about__card small {
+    font-size: 0.7rem;
+    color: var(--color-light);
+}
+
+.about__content p {
+    margin: 2rem 0 2.6rem; /* top , left and right , bottom */
+    color: var(--color-light);
+    text-align: center;
+}
+
+/* MEDIA QUERIES (MEDIUM DEVICES / TABLETS) */
+
+@media screen and (max-width: 1024px){
+   .about__container {
+     grid-template-columns: 1fr;
+     gap: 0;
+   }
+   
+   .about__content p {
+     margin: 1rem 0 1.5rem; /*top , left and right , bottom*/
+   }
+}
+ 
+/* MEDIA QUERIES (SMALL DEVICES) */
+ 
+@media screen and (max-width: 600px){
+   .about__cards {
+     grid-template-columns: 1fr 1fr;
+     gap: 1rem; 
+   }
+   
+   .about__content p {
+     margin: 1.5rem 0; /* top , bottom | left , right */ 
+
+   }
+}
